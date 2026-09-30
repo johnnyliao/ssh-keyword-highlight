@@ -64,6 +64,10 @@ ChromaTerm 內建的規則會替 IP、MAC、URL、日期、時間、數字，以
 | 紅色 | `exception`、`fatal`、`refused`、`unhealthy`、`killed`、`panic`、`critical`、`traceback`、`crash`、`abort`、`missing`、`oom`、`HTTP 5xx`（粗體） |
 | 黃色 | `warn`、`deprecated`、`restarting`、`retry`、`skip`、`HTTP 4xx` |
 | 綠色 | `healthy`、`acknowledged`、`green`、`done`、`completed`、`HTTP 2xx` |
+| 紫色 | IPv4 位址（含 `/24` 這類網段），跟 MobaXterm 一樣 |
+| 青色 | `info`、`information`、`notice`、`debug`、`Last login`，以及前面有空白的 `--長參數`（例如 `--upgradable`） |
+
+`--長參數` 只比對雙減號，所以 `ls -l` 輸出裡的 `-rw-r--r--` 這類權限字串不會被誤判。
 
 規則檔位於 `~/.chromaterm.yml`，存檔後就會生效。安裝腳本加的規則放在 `# >>> ssh-keyword-highlight >>>` 和 `# <<< ssh-keyword-highlight <<<` 之間，重跑腳本時只會更新這一段，其他自訂的規則不受影響。
 

@@ -105,6 +105,11 @@ EXTRA_RULES=$(cat <<'YAML'
   color: f.status-7
   exclusive: true
 
+- description: Extra - IPv4 (magenta, like MobaXterm)
+  regex: (?<![\w.])((25[0-5]|2[0-4]\d|1?\d?\d)\.){3}(25[0-5]|2[0-4]\d|1?\d?\d)(/\d{1,2})?(?![\w.])
+  color: f.type-3
+  exclusive: true
+
 - description: Extra - Bad
   regex: (?i)\b(exceptions?|fatal|refused|unhealthy|killed|panic|critical|traceback|crash(ed|es)?|abort(ed)?|missing|oom)\b
   color: f.status-1
@@ -118,6 +123,16 @@ EXTRA_RULES=$(cat <<'YAML'
 - description: Extra - Good
   regex: (?i)\b(healthy|acknowledged|green|done|completed)\b
   color: f.status-7
+  exclusive: true
+
+- description: Extra - Info (cyan, like MobaXterm)
+  regex: (?i)\b(info(rmation)?|notice|debug|last login)\b
+  color: f.type-2
+  exclusive: true
+
+- description: Extra - Long options like --upgradable
+  regex: (?<=\s)--[A-Za-z][\w-]*
+  color: f.type-2
   exclusive: true
 # <<< ssh-keyword-highlight <<<
 YAML
