@@ -1,0 +1,2 @@
+# 在 Windows 上 clone 再複製進 WSL 時，shell 腳本仍保持 LF，避免 bash 讀到 \r
+*.sh text eol=lf
